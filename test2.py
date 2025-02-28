@@ -95,9 +95,9 @@ def create_archive(source_dir, output_dir):
     logging.info(f"Создание архива из {source_dir}...")
     dir_name = os.path.basename(source_dir)
     current_date = datetime.now().strftime("%d%m%Y")
-    archive_name = f"{dir_name}{current_date}.zip"
+    archive_name = f"{dir_name}{current_date}"
     archive_path = os.path.join(output_dir, archive_name)
-    shutil.make_archive(archive_path.replace('.zip', ''), 'zip', source_dir)
+    shutil.make_archive(archive_path, 'zip', source_dir)
     logging.info(f"Архив создан: {archive_path}")
 
 @timer
